@@ -24,7 +24,6 @@ public class UrlShortnerController {
     @PostMapping("/create")
     public ResponseEntity<?> generateShortLink(@RequestBody UrlDto urlDto) {
         Url generatedUrlDto = urlService.generateShortLink(urlDto);
-//        System.out.println(generatedUrlDto);
         if(generatedUrlDto != null){
             ResponseDto responseDto = new ResponseDto();
             responseDto.setTrueUrl(generatedUrlDto.getTrueUrl());
